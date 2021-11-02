@@ -130,6 +130,35 @@ footer{
 	transform: translate3d(115%, -100%, 0);
 	z-index: 3;
 }
+.car-junior__wheel::after{
+	content: '';
+	width: 200px;
+	height: 200px;
+	background-color:rgba(0,0,0,1);
+	position: absolute;
+	top: 50%;
+	left: 0;
+	border-radius: 50%;
+	transform: scale(0.8, 0);
+	animation: wheel-skeed-start 2s 1 4s forwards,  wheel-skeed 2s 1 7s forwards;
+}
+@keyframes wheel-skeed-start{
+	0%{
+		transform: scale(0.2, 0);
+	}
+	100%{
+		transform: scale(0.3, 0.05);
+	}
+}
+@keyframes wheel-skeed{
+	0%{
+		/* transform: scale(0.3, 0); */
+	}
+	100%{
+		transform: scale(0.5, 0.1);
+	}
+}
+
 .car-junior__wing {
 	width: 240px;
 	height: 140px;
@@ -188,7 +217,24 @@ footer{
 	background: linear-gradient(to right, rgba(76,76,76,1) 0%,rgba(147,147,147,1) 50%,rgba(68,68,68,1) 100%);
 	border-radius: 50%;
 	border: 1px solid #000;
-
+	animation: wheel-rotate-start 2s 1 reverse 4s, wheel-rotate 1s 3 reverse linear 6s, wheel-rotate-start 2s 1 reverse 9s, wheel-rotate 1s 3 reverse linear 10s;
+	/* animation: wheel-rotate 1s 3 reverse linear 2s; */
+}
+@keyframes wheel-rotate-start{
+	0%{
+		/* border-radius: 0; */
+	}
+	100%{
+		transform: rotatez(360deg);
+	}
+}
+@keyframes wheel-rotate{
+	0%{
+		/* border-radius: 0; */
+	}
+	100%{
+		transform: rotatez(360deg);
+	}
 }
 .wheel-car-junior__body {
 	/* display: inline-block; */
@@ -480,6 +526,19 @@ background: linear-gradient(to bottom, rgba(99,94,94,1) 0%,rgba(61,61,61,1) 47%,
 	border-radius: 55% 45% 21% 61% / 53% 52% 43% 33%;
 	border-right: 5px solid rgb(12, 12, 12);
 	border-top: 10px solid rgba(22, 22, 22, 0.781);
+	animation: loop-f-start 0.3s 2s 2, loop-f 0.1s 2.7s forwards;
+	/* animation: loop-f 0.1s 2.5s forwards; */
+	/* animation: loop-start 1s timing-function 0s 2 direction fill-mode; */
+}
+@keyframes loop-f-start {
+	100%{
+		background: linear-gradient(to top, rgb(229, 110, 41) 30%,rgb(225, 228, 56) 57%,rgb(223, 205, 51) 57%);
+	}
+}
+@keyframes loop-f {
+	100%{
+		background: linear-gradient(to top, rgb(229, 110, 41) 30%,rgb(225, 228, 56) 57%,rgb(223, 205, 51) 57%);
+	}
 }
 .car-junior__loop-b {
 	width: 50px;
@@ -493,7 +552,21 @@ background: linear-gradient(to bottom, rgba(99,94,94,1) 0%,rgba(61,61,61,1) 47%,
 	border-radius: 52% 54% 28% 77% / 51% 84% 24% 48%;
 	border-left: 8px solid rgb(12, 12, 12);
 	border-bottom: 3px solid rgba(22, 22, 22, 0.781);
+	animation: loop-b-start 0.3s 2s 2, loop-b 0.1s 2.7s forwards;
+	/* transition: 0.3s 0s; */
+	/* animation: loop-start 1s timing-function 0s 2 direction fill-mode; */
 }
+@keyframes loop-b-start {
+	100%{
+		background: linear-gradient(to left, rgb(229, 110, 41) 30%,rgb(225, 228, 56) 57%,rgb(223, 205, 51) 57%);
+	}
+}
+@keyframes loop-b {
+	100%{
+		background: linear-gradient(to left, rgb(229, 110, 41) 30%,rgb(225, 228, 56) 57%,rgb(223, 205, 51) 57%);
+	}
+}
+
 
 
 /* контуры */
